@@ -47,17 +47,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     let back4 = color(black);
     let teeth = color(yellow);
     
-    let centerX =100;
-    let centerY =100;
-    let craniumSize = -140;
-    let eyeSize = 10;
-    let backCX = 100;
-    let backCY = 100;
-    let backCS = 200;
-    let x = 100;
-    let y = 100;
-    let s1 = 110;
-    let s = -110
+ 
     let r1 = random(20,200);
     let r2 = random(20,200);
     let r3 = random(20,200);
@@ -69,7 +59,18 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     let r9 = random(20,200);
     let r = random(20,200);
   
-
+    let centerX =100;
+    let centerY =100;
+    let craniumSize = 140;
+    let eyeSize = 10;
+    let backCX = 100;
+    let backCY = 100;
+    let backCS = 200;
+    let x = 100;
+    let y = 100;
+    let s1 = 110;
+    let s = -110
+    
     let hat = 5;
     let sword =0;
     let leye = 3;
@@ -81,41 +82,43 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     yellow 255,233,0
     pink 255,62,181
    */
+    let lineW = 0
     if (craniumSize>100){
-      let lineW = 5
+       lineW = 4
     }
+    
     else{
-      let lineW = 1
+       lineW = 1
     }
 
     if(background == 1)//concentric
     { stroke(line3);
-      strokeWeight(3);
+      strokeWeight(lineW*2);
       noFill()
       rect(0,0,200,200)}
 
     if(background == 1)
       {noFill();
-        strokeWeight(5)
+        strokeWeight(lineW*3)
         ellipse(100,100,200,200);
         ellipse(100,100,175,175);
         ellipse(100,100,150,150);
         ellipse(100,100,125,125);
         ellipse(100,100,100,100);
     
-        strokeWeight(2);
+        strokeWeight(lineW/2);
         line(0,0,200,200);
         line(0,20,180,200);
         line(20,0,200,180);
     
-        strokeWeight(2);
+        strokeWeight(lineW/2);
         line(0,200,200,0);
         line(0,180,180,0);
         line(200,20,20,200);}
 
     if (background == 2) //Lines
     { stroke(line3);
-      strokeWeight(3);
+      strokeWeight(lineW);
       line(5,5,5,100);
       line(5,105,5,200);
       line(10,15,10,115);
@@ -191,8 +194,8 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
       line(200,135,200,200);}
      
     if (background == 3)//fade
-    {strokeWeight(5)
-      stroke(fwhite)
+    {strokeWeight(lineW)
+      stroke(line4)
       fill(back2)
       ellipse(backCX,backCY,backCS);
       ellipse(backCX,backCY,backCS/8*7);
@@ -228,47 +231,47 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
    
     if(background == 5)//drips
     { stroke(line3);
-      strokeWeight(1);
+      strokeWeight(lineW);
       fill(back4)
-      line(5,5,5,r1);
+      line(5,0,5,r1);
       ellipse(5,r1,5,5);
-      line(15,5,15,r2);
+      line(15,0,15,r2);
       ellipse(15,r2,5,5);
-      line(25,5,25,r3);
+      line(25,0,25,r3);
       ellipse(25,r3,5,5);
-      line(35,5,35,r4);
+      line(35,0,35,r4);
       ellipse(35,r4,5,5);
-      line(45,5,45,r5);
+      line(45,0,45,r5);
       ellipse(45,r5,5,5);
-      line(55,5,55,r6);
+      line(55,0,55,r6);
       ellipse(55,r6,5,5);
-      line(65,5,65,r7);
+      line(65,0,65,r7);
       ellipse(65,r7,5,5);
-      line(75,5,75,r8);
+      line(75,0,75,r8);
       ellipse(75,r8,5,5);
-      line(85,5,85,r9);
+      line(85,0,85,r9);
       ellipse(85,r9,5,5);
-      line(95,5,95,r);
+      line(95,0,95,r);
       ellipse(95,r,5,5);
-      line(105,5,105,r1);
+      line(105,0,105,r1);
       ellipse(105,r1,5,5);
-      line(115,5,115,r2);
+      line(115,0,115,r2);
       ellipse(115,r2,5,5);
-      line(125,5,125,r3);
+      line(125,0,125,r3);
       ellipse(125,r3,5,5);
-      line(135,5,135,r4);
+      line(135,0,135,r4);
       ellipse(135,r4,5,5);
-      line(145,5,145,r5);
+      line(145,0,145,r5);
       ellipse(145,r5,5,5);
-      line(155,5,155,r6);
+      line(155,0,155,r6);
       ellipse(155,r6,5,5);
-      line(165,5,165,r7);
+      line(165,0,165,r7);
       ellipse(165,r7,5,5);
-      line(175,5,175,r8);
+      line(175,0,175,r8);
       ellipse(175,r8,5,5);
-      line(185,5,185,r9);
+      line(185,0,185,r9);
       ellipse(185,r9,5,5);
-      line(195,5,195,r);
+      line(195,0,195,r);
       ellipse(195,r,5,5);
 
       line(5,200,5,r1+10);
@@ -278,46 +281,46 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
       line(25,200,25,r3+10);
       ellipse(25,r3+10,5,5);
       line(35,200,35,r4+10);
-      ellipse(35,r4-10,5,5);
-      line(45,200,45,r5-10);
-      ellipse(45,r5-10,5,5);
-      line(55,200,55,r6-10);
-      ellipse(55,r6-10,5,5);
-      line(65,200,65,r7-10);
-      ellipse(65,r7-10,5,5);
-      line(75,200,75,r8-10);
-      ellipse(75,r8-10,5,5);
-      line(85,200,85,r9-10);
-      ellipse(85,r9-10,5,5);
-      line(95,200,95,r-10);
-      ellipse(95,r-10,5,5);
-      line(105,200,105,r1-10);
-      ellipse(105,r1-10,5,5);
-      line(115,200,115,r2-10);
-      ellipse(115,r2-10,5,5);
-      line(125,200,125,r3-10);
-      ellipse(125,r3-10,5,5);
-      line(135,200,135,r4-10);
-      ellipse(135,r4-10,5,5);
-      line(145,200,145,r5-10);
-      ellipse(145,r5-10,5,5);
-      line(155,200,155,r6-10);
-      ellipse(155,r6-10,5,5);
-      line(165,200,165,r7-10);
-      ellipse(165,r7-10,5,5);
-      line(175,200,175,r8-10);
-      ellipse(175,r8-10,5,5);
-      line(185,200,185,r9-10);
-      ellipse(185,r9-10,5,5);
-      line(195,200,195,r-10);
-      ellipse(195,r-10,5,5);
+      ellipse(35,r4+10,5,5);
+      line(45,200,45,r5+10);
+      ellipse(45,r5+10,5,5);
+      line(55,200,55,r6+10);
+      ellipse(55,r6+10,5,5);
+      line(65,200,65,r7+10);
+      ellipse(65,r7+10,5,5);
+      line(75,200,75,r8+10);
+      ellipse(75,r8+10,5,5);
+      line(85,200,85,r9+10);
+      ellipse(85,r9+10,5,5);
+      line(95,200,95,r+10);
+      ellipse(95,r+10,5,5);
+      line(105,200,105,r1+10);
+      ellipse(105,r1+10,5,5);
+      line(115,200,115,r2+10);
+      ellipse(115,r2+10,5,5);
+      line(125,200,125,r3+10);
+      ellipse(125,r3+10,5,5);
+      line(135,200,135,r4+10);
+      ellipse(135,r4+10,5,5);
+      line(145,200,145,r5+10);
+      ellipse(145,r5+10,5,5);
+      line(155,200,155,r6+10);
+      ellipse(155,r6+10,5,5);
+      line(165,200,165,r7+10);
+      ellipse(165,r7+10,5,5);
+      line(175,200,175,r8+10);
+      ellipse(175,r8+10,5,5);
+      line(185,200,185,r9+10);
+      ellipse(185,r9+10,5,5);
+      line(195,200,195,r+10);
+      ellipse(195,r+10,5,5);
       
     }
     if (sword > 0) //Gutterborn scum
     {//Gutterborn
       stroke(line2)
       fill(hat1)
-      strokeWeight(2)
+      strokeWeight(lineW)
       beginShape()
       vertex(centerX+craniumSize/100*5,centerY-craniumSize/100*101);
       vertex(centerX+craniumSize/100*5,centerY-craniumSize/100*61);
@@ -343,11 +346,11 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   
     
   
-      strokeWeight(1);
+      strokeWeight(lineW/3);
       stroke(line2)
       line(centerX,centerY+craniumSize/100*89,centerX,centerY-craniumSize/100*54);
   
-      strokeWeight(2)
+      strokeWeight(lineW)
       fill(base2)
       ellipse(centerX,centerY-craniumSize/100*100,craniumSize/100*15,craniumSize/100*15)
       ellipse(centerX+craniumSize/100*30,centerY-craniumSize/100*55,craniumSize/100*9,craniumSize/100*9)
@@ -355,9 +358,9 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
    
     
   
-   /* //Skull
+    //Skull
     stroke(line1);
-    strokeWeight(3)
+    strokeWeight(lineW)
     fill(base1);
   
     ellipse(centerX,centerY,craniumSize) //range between x 85 - 120 y 70 - 120   
@@ -416,19 +419,19 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   
     
     if (leye == 2) 
-    {strokeWeight(3);
+    {strokeWeight(lineW);
     line(centerX-craniumSize/100*27,centerY+craniumSize/100*21,centerX-craniumSize/100*9,centerY+craniumSize/100*34); //Cross Eye Left
     line(centerX-craniumSize/100*6,centerY+craniumSize/100*21,centerX-craniumSize/100*22,centerY+craniumSize/100*31);}
     
     if (reye == 2)
-    {strokeWeight(3); 
+    {strokeWeight(lineW); 
     line(centerX+craniumSize/100*26,centerY+craniumSize/100*21,centerX+craniumSize/100*9,centerY+craniumSize/100*34); //CrossEye Right
     line(centerX+craniumSize/100*6,centerY+craniumSize/100*21,centerX+craniumSize/100*22,centerY+craniumSize/100*31);}
   
 
     if (leye==1)
     {stroke(line1);
-      strokeWeight(3);
+      strokeWeight(lineW);
       beginShape();  //Eye Left
       curveVertex(centerX-craniumSize/100*26,centerY+craniumSize/100*21);
       curveVertex(centerX-craniumSize/100*6,centerY+craniumSize/100*24);
@@ -451,12 +454,12 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     curveVertex(centerX,centerY+craniumSize/100*39);
     curveVertex(centerX-craniumSize/100*4,centerY+craniumSize/100*42);
     endShape(CLOSE);
-    */
+    
       
     if (hat == 4) //Wretched royalty
     {//CROWN
       stroke(line2);
-  
+      strokeWeight(lineW)
       fill(hat1);
   
       beginShape();
@@ -476,7 +479,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
       endShape(CLOSE);
   
       fill(hat2)
-      strokeWeight(2)
+      strokeWeight(lineW/2)
   
       ellipse(centerX,centerY-craniumSize/100*28,craniumSize/100*15,craniumSize/100*25);
       ellipse(centerX-craniumSize/100*20,centerY-craniumSize/100*25,craniumSize/100*10,craniumSize/100*20);
@@ -485,7 +488,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     if (hat == 1) //Fanged deserter
     {//Deserter
       stroke(line2)
-      strokeWeight(2)
+      strokeWeight(lineW)
       fill(hat1)
       beginShape()
       vertex(centerX-craniumSize/100*30,centerY+craniumSize/100*19);
@@ -530,7 +533,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     { //Herbmaster
       stroke(line2)
       fill(hat1)
-      strokeWeight(3)
+      strokeWeight(lineW)
   
       beginShape();
       curveVertex(56.1064 , 60.2417);
@@ -572,7 +575,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   
       fill(hat2);
       stroke(line2);
-      strokeWeight(2)
+      strokeWeight(lineW)
       
       beginShape();
       curveVertex(65.3618 ,63.1306 );
@@ -607,7 +610,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     if (hat == 5) //Hereticl priest 
     {//Heretical Priest
       stroke(line2);
-      strokeWeight(2);
+      strokeWeight(lineW);
   
       line(centerX-craniumSize/100*15,centerY+craniumSize/100*10,centerX+craniumSize/100*10,centerY+craniumSize/100*10);
       line(centerX-craniumSize/100*10,centerY+craniumSize/100*7,centerX+craniumSize/100*15,centerY+craniumSize/100*7);
@@ -626,7 +629,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     if (hat == 3) //Esoteric hermit
     {//Hermit
     stroke(line2);
-    strokeWeight(3);
+    strokeWeight(lineW*1.5);
 
     line(centerX-craniumSize/100*45,centerY-craniumSize/100*7,centerX-craniumSize/100*39,centerY+craniumSize/100*10);
     line(centerX-craniumSize/100*46,centerY-craniumSize/100*2,centerX-craniumSize/100*39,centerY);
