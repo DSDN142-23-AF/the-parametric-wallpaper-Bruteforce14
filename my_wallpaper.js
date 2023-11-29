@@ -33,36 +33,48 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     let fblack = color(0,0,0,100);
     let white = color(255,255,255);
     let fwhite = color(255,255,255,50);
-    let line1 = color(black);
-    let line2 = color(yellow);
+    let line1 = color(pink);
+    let line2 = color(pink);
     let line3 = color(black);
-    let base1 = color(yellow);
-    let base2 = color(pink);
+    let base1 = color(white);
+    let base2 = color(yellow);
     let base3 = color(yellow);
-    let hat1 = color(black)
+    let hat1 = color(white)
     let hat2 = color(yellow)
     let back = color(yellow);
-    let back2 = color(fblack);
-    let back3 = color(yellow);
+    let back2 = color(fyellow);
+    let back3 = color(fpink);
     let back4 = color(black);
-    let teeth = color(white);
+    let teeth = color(yellow);
     
     let centerX =100;
     let centerY =100;
-    let craniumSize = 120;
-    let eyeSize = 15;
+    let craniumSize = -140;
+    let eyeSize = 10;
     let backCX = 100;
     let backCY = 100;
-    let backCS = 250;
+    let backCS = 200;
     let x = 100;
     let y = 100;
-    let s = 110;
+    let s1 = 110;
+    let s = -110
+    let r1 = random(20,200);
+    let r2 = random(20,200);
+    let r3 = random(20,200);
+    let r4 = random(20,200);
+    let r5 = random(20,200);
+    let r6 = random(20,200);
+    let r7 = random(20,200);
+    let r8 = random(20,200);
+    let r9 = random(20,200);
+    let r = random(20,200);
+  
 
     let hat = 5;
-    let sword =1;
-    let leye = 1;
-    let reye = 1;
-    let background =4;
+    let sword =0;
+    let leye = 3;
+    let reye = 3;
+    let background =5;
     
     
     /*Mork Borg Colours 
@@ -76,14 +88,33 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
       let lineW = 1
     }
 
-    if(background == 1)
+    if(background == 1)//concentric
     { stroke(line3);
       strokeWeight(3);
-      fill(back)
+      noFill()
       rect(0,0,200,200)}
 
+    if(background == 1)
+      {noFill();
+        strokeWeight(5)
+        ellipse(100,100,200,200);
+        ellipse(100,100,175,175);
+        ellipse(100,100,150,150);
+        ellipse(100,100,125,125);
+        ellipse(100,100,100,100);
+    
+        strokeWeight(2);
+        line(0,0,200,200);
+        line(0,20,180,200);
+        line(20,0,200,180);
+    
+        strokeWeight(2);
+        line(0,200,200,0);
+        line(0,180,180,0);
+        line(200,20,20,200);}
+
     if (background == 2) //Lines
-    {stroke(line3);
+    { stroke(line3);
       strokeWeight(3);
       line(5,5,5,100);
       line(5,105,5,200);
@@ -159,27 +190,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
       line(200,10,200,110);
       line(200,135,200,200);}
      
-    
-    if(background == 1)
-    {noFill();
-      strokeWeight(5)
-      ellipse(100,100,200,200);
-      ellipse(100,100,175,175);
-      ellipse(100,100,150,150);
-      ellipse(100,100,125,125);
-      ellipse(100,100,100,100);
-  
-      strokeWeight(2);
-      line(0,0,200,200);
-      line(0,20,180,200);
-      line(20,0,200,180);
-  
-      strokeWeight(2);
-      line(0,200,200,0);
-      line(0,180,180,0);
-      line(200,20,20,200);}
-
-    if (background == 3)
+    if (background == 3)//fade
     {strokeWeight(5)
       stroke(fwhite)
       fill(back2)
@@ -193,7 +204,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
       ellipse(backCX,backCY,backCS/8*1);
     }
 
-    if(background == 4)
+    if(background == 4)//swords
     {/*
       DrawSword(90,0,20,line3,base2);
       DrawSword(90,25,-40,line2,back3);
@@ -205,17 +216,103 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
       DrawSword(175,110,-40,line2,back3);
       DrawSword(200,110,20,line3,base2);*/
 
-      DrawSword(x,y,s*1.8,back4,back4);
+      DrawSword(x,y,s1*1.8,back4,back4);
       DrawSword(x-s/100*25,y-s/100*25,s*1.20,back3,back3);
       DrawSword(x+s/100*25,y+s/100*25,s*1.20,back3,back3);
-      DrawSword(x+s/100*50,y+s/100*50,s*0.8,back4,back4);
-      DrawSword(x-s/100*50,y-s/100*50,s*0.80,back4,back4);
+      DrawSword(x+s1/100*50,y+s1/100*50,s1*0.8,back4,back4);
+      DrawSword(x-s1/100*50,y-s1/100*50,s1*0.80,back4,back4);
       DrawSword(x-s/100*75,y-s/100*75,s*0.40,back3,back3);
       DrawSword(x+s/100*75,y+s/100*75,s*0.40,back3,back3);
   
     }
    
+    if(background == 5)//drips
+    { stroke(line3);
+      strokeWeight(1);
+      fill(back4)
+      line(5,5,5,r1);
+      ellipse(5,r1,5,5);
+      line(15,5,15,r2);
+      ellipse(15,r2,5,5);
+      line(25,5,25,r3);
+      ellipse(25,r3,5,5);
+      line(35,5,35,r4);
+      ellipse(35,r4,5,5);
+      line(45,5,45,r5);
+      ellipse(45,r5,5,5);
+      line(55,5,55,r6);
+      ellipse(55,r6,5,5);
+      line(65,5,65,r7);
+      ellipse(65,r7,5,5);
+      line(75,5,75,r8);
+      ellipse(75,r8,5,5);
+      line(85,5,85,r9);
+      ellipse(85,r9,5,5);
+      line(95,5,95,r);
+      ellipse(95,r,5,5);
+      line(105,5,105,r1);
+      ellipse(105,r1,5,5);
+      line(115,5,115,r2);
+      ellipse(115,r2,5,5);
+      line(125,5,125,r3);
+      ellipse(125,r3,5,5);
+      line(135,5,135,r4);
+      ellipse(135,r4,5,5);
+      line(145,5,145,r5);
+      ellipse(145,r5,5,5);
+      line(155,5,155,r6);
+      ellipse(155,r6,5,5);
+      line(165,5,165,r7);
+      ellipse(165,r7,5,5);
+      line(175,5,175,r8);
+      ellipse(175,r8,5,5);
+      line(185,5,185,r9);
+      ellipse(185,r9,5,5);
+      line(195,5,195,r);
+      ellipse(195,r,5,5);
 
+      line(5,200,5,r1+10);
+      ellipse(5,r1+10,5,5);
+      line(15,200,15,r2+10);
+      ellipse(15,r2+10,5,5);
+      line(25,200,25,r3+10);
+      ellipse(25,r3+10,5,5);
+      line(35,200,35,r4+10);
+      ellipse(35,r4-10,5,5);
+      line(45,200,45,r5-10);
+      ellipse(45,r5-10,5,5);
+      line(55,200,55,r6-10);
+      ellipse(55,r6-10,5,5);
+      line(65,200,65,r7-10);
+      ellipse(65,r7-10,5,5);
+      line(75,200,75,r8-10);
+      ellipse(75,r8-10,5,5);
+      line(85,200,85,r9-10);
+      ellipse(85,r9-10,5,5);
+      line(95,200,95,r-10);
+      ellipse(95,r-10,5,5);
+      line(105,200,105,r1-10);
+      ellipse(105,r1-10,5,5);
+      line(115,200,115,r2-10);
+      ellipse(115,r2-10,5,5);
+      line(125,200,125,r3-10);
+      ellipse(125,r3-10,5,5);
+      line(135,200,135,r4-10);
+      ellipse(135,r4-10,5,5);
+      line(145,200,145,r5-10);
+      ellipse(145,r5-10,5,5);
+      line(155,200,155,r6-10);
+      ellipse(155,r6-10,5,5);
+      line(165,200,165,r7-10);
+      ellipse(165,r7-10,5,5);
+      line(175,200,175,r8-10);
+      ellipse(175,r8-10,5,5);
+      line(185,200,185,r9-10);
+      ellipse(185,r9-10,5,5);
+      line(195,200,195,r-10);
+      ellipse(195,r-10,5,5);
+      
+    }
     if (sword > 0) //Gutterborn scum
     {//Gutterborn
       stroke(line2)
@@ -258,7 +355,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
    
     
   
-    //Skull
+   /* //Skull
     stroke(line1);
     strokeWeight(3)
     fill(base1);
@@ -354,7 +451,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     curveVertex(centerX,centerY+craniumSize/100*39);
     curveVertex(centerX-craniumSize/100*4,centerY+craniumSize/100*42);
     endShape(CLOSE);
-    
+    */
       
     if (hat == 4) //Wretched royalty
     {//CROWN
@@ -376,14 +473,14 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
       vertex(centerX+craniumSize/100*40,centerY-craniumSize/100*61);
       vertex(centerX+craniumSize/100*50,centerY-craniumSize/100*36);
       vertex(centerX+craniumSize/100*50,centerY-craniumSize/100*11);
-      endShape();
+      endShape(CLOSE);
   
       fill(hat2)
       strokeWeight(2)
   
-      ellipse(centerX,centerY-craniumSize/100*36,craniumSize/100*15,craniumSize/100*25);
-      ellipse(centerX-craniumSize/100*20,centerY-craniumSize/100*31,craniumSize/100*10,craniumSize/100*20);
-      ellipse(centerX+craniumSize/100*20,centerY-craniumSize/100*31,craniumSize/100*10,craniumSize/100*20)}
+      ellipse(centerX,centerY-craniumSize/100*28,craniumSize/100*15,craniumSize/100*25);
+      ellipse(centerX-craniumSize/100*20,centerY-craniumSize/100*25,craniumSize/100*10,craniumSize/100*20);
+      ellipse(centerX+craniumSize/100*20,centerY-craniumSize/100*25,craniumSize/100*10,craniumSize/100*20)}
     
     if (hat == 1) //Fanged deserter
     {//Deserter
