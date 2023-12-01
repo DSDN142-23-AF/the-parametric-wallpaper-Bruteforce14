@@ -1,68 +1,74 @@
-//your parameter variables go here!
-let centerX =100;
-let centerY =100;
-let eyeSize = 10;
-let backCX = 100;
-let backCY = 100;
-let backCS = 200;
-let x = 100;
-let y = 100;
-let s1 = 110;
-let s = -110
-
-let hat = 3;
-let sword =0;
-let leye = 2;
-let reye = 2;
-let backGround =5;
-let skullSize = 2
-
-function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_PORTRAIT);
-  pWallpaper.show_guide(false); //set this to false when you're ready to print
-
-  //Grid settings
-  pWallpaper.grid_settings.cell_width  = 200;
-  pWallpaper.grid_settings.cell_height = 200;
-  pWallpaper.grid_settings.row_offset  = 100;
-
-  
-}
-
-function wallpaper_background() {
-  let pink= color(255,62,181);
-  let yellow = color(255,233,0);
-  let white = color(255);
-  let black = color(0);
-  background(yellow)
- 
-}
-
-function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
-    let pink= color(255,62,181);
-    let fpink= color(255,62,181,150);
-    let yellow = color(255,233,0);
-    let fyellow = color(255,233,0,50);
-    let inner = color(255,255,255);
-    let black = color(0,0,0);
-    let fblack = color(0,0,0,100);
-    let white = color(255,255,255);
-    let fwhite = color(255,255,255,50);
-    let line1 = color(black);
-    let line2 = color(pink);
-    let line3 = color(black);
-    let base1 = color(white);
-    let base2 = color(yellow);
-    let base3 = color(yellow);
-    let hat1 = color(white)
-    let hat2 = color(yellow)
-    let back = color(yellow);
-    let back2 = color(fyellow);
-    let back3 = color(yellow);
-    let back4 = color(pink);
-    let teeth = color(yellow);
-    let craniumSize = 0;
+    //your parameter variables go here!
+    let centerX =100; // location of skull and all hats on X axis
+    let centerY =100; // location of skull and all hats on Y axis
+    let eyeSize = 10; // controls eye 3 size
+    let backCX = 100; // controls the center of the fade background ellipses on the X axis
+    let backCY = 100; // controls the center of the fade background ellipses on the Y axis
+    let backCS = 200; // controls the size of the outer ellipse of the fade background
+    let x = 100; // controls the center of the Swords background on the X axis
+    let y = 100; // controls the center of the Swords background on the Y axis
+    let s1 = 110; // controls the scale of the back3 swords in the swords background
+    let s = -110; // controls the scale of the back4 swords in the swords background (negative number flips tip direction)
+    
+    let hat = 5; // which class option:
+    //1 fanged deserter,2 gutterborn scum,3 esoteric hermit,4 wretched royalty,5 heretical priest,6 occult herbmaster
+    let sword =0; // actually enables gutterborn scum option if 1
+    let leye = 2; // eye options: 1 standard eye hole,2 crossed eye, 3 custom size circle eye
+    let reye = 2;
+    let backGround =4; // 1 Concentric circles with lines,2 Vertical lines,3 Ellipse fade,4 Swords,5 Vertical Lines with Ellipses
+    let large = 150; // changes the skull size of skullSize = 2
+    let small = 90;  // changes the skull size of skullSize = 1
+    let thick = 4;
+    let thin = 2;
+    let skullSize = 0 // changes the size of the skull: 0 is random,1 is small, 2 is large
+    
+    function setup_wallpaper(pWallpaper) {
+      pWallpaper.output_mode(GRID_WALLPAPER);
+      pWallpaper.resolution(A3);
+      pWallpaper.show_guide(false); //set this to false when you're ready to print
+    
+      //Grid settings
+      pWallpaper.grid_settings.cell_width  = 200;
+      pWallpaper.grid_settings.cell_height = 200;
+      pWallpaper.grid_settings.row_offset  = 100;
+    
+      
+    }
+    
+    function wallpaper_background() {
+      let pink= color(255,62,181);
+      let yellow = color(255,233,0);
+      let white = color(255);
+      let black = color(0);
+      background(black)
+     
+    }
+    
+    function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
+        let pink= color(255,62,181);
+        let fpink= color(255,62,181,150);
+        let yellow = color(255,233,0);
+        let fyellow = color(255,233,0,50);
+        let inner = color(255,255,255);
+        let black = color(0,0,0);
+        let fblack = color(0,0,0,100);
+        let white = color(255,255,255);
+        let fwhite = color(255,255,255,50);
+        let line1 = color(black);
+        let line2 = color(pink);
+        let line3 = color(black);
+        let line4 = color(black);
+        let base1 = color(white);
+        let base2 = color(black);
+        let base3 = color(yellow);
+        let hat1 = color(black)
+        let hat2 = color(white)
+        let back = color(yellow);
+        let back2 = color(fyellow);
+        let back3 = color(yellow);
+        let back4 = color(pink);
+        let teeth = color(yellow);
+        let craniumSize = 0;
  
     let r1 = random(20,200);
     let r2 = random(20,200);
@@ -78,7 +84,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     let rs = random(40,150)
   
     if (skullSize == 1){
-      craniumSize = 100
+      craniumSize = small
     } 
     
     if (skullSize == 0){
@@ -86,7 +92,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     } 
     
     if (skullSize == 2){
-      craniumSize = 150
+      craniumSize = large
     } 
     /*Mork Borg Colours 
     yellow 255,233,0
@@ -94,11 +100,11 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
    */
     let lineW = 0
     if (craniumSize>100){
-       lineW = 4
+       lineW = thick
     }
     
     else{
-       lineW = 2
+       lineW = thin
     }
 
     if(backGround == 1)//concentric
@@ -328,7 +334,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     }
     if (sword > 0) //Gutterborn scum
     {//Gutterborn
-      stroke(line2)
+      stroke(line4)
       fill(hat1)
       strokeWeight(lineW)
       beginShape()
@@ -357,11 +363,11 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     
   
       strokeWeight(lineW/3);
-      stroke(line2)
+      stroke(line4)
       line(centerX,centerY+craniumSize/100*89,centerX,centerY-craniumSize/100*54);
   
       strokeWeight(lineW)
-      fill(base2)
+      fill(hat2)
       ellipse(centerX,centerY-craniumSize/100*100,craniumSize/100*15,craniumSize/100*15)
       ellipse(centerX+craniumSize/100*30,centerY-craniumSize/100*55,craniumSize/100*9,craniumSize/100*9)
       ellipse(centerX-craniumSize/100*30,centerY-craniumSize/100*55,craniumSize/100*9,craniumSize/100*9) }
