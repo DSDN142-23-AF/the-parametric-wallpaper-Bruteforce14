@@ -10,12 +10,12 @@ let y = 100;
 let s1 = 110;
 let s = -110
 
-let hat = 5;
+let hat = 3;
 let sword =0;
-let leye = 3;
-let reye = 3;
-let backGround =4;
-let skullSize = 0
+let leye = 2;
+let reye = 2;
+let backGround =5;
+let skullSize = 2
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
@@ -35,7 +35,7 @@ function wallpaper_background() {
   let yellow = color(255,233,0);
   let white = color(255);
   let black = color(0);
-  background(pink)
+  background(yellow)
  
 }
 
@@ -49,7 +49,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     let fblack = color(0,0,0,100);
     let white = color(255,255,255);
     let fwhite = color(255,255,255,50);
-    let line1 = color(pink);
+    let line1 = color(black);
     let line2 = color(pink);
     let line3 = color(black);
     let base1 = color(white);
@@ -60,7 +60,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     let back = color(yellow);
     let back2 = color(fyellow);
     let back3 = color(yellow);
-    let back4 = color(black);
+    let back4 = color(pink);
     let teeth = color(yellow);
     let craniumSize = 0;
  
@@ -98,7 +98,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     }
     
     else{
-       lineW = 1
+       lineW = 2
     }
 
     if(backGround == 1)//concentric
