@@ -1,5 +1,21 @@
 //your parameter variables go here!
+let centerX =100;
+let centerY =100;
+let eyeSize = 10;
+let backCX = 100;
+let backCY = 100;
+let backCS = 200;
+let x = 100;
+let y = 100;
+let s1 = 110;
+let s = -110
 
+let hat = 5;
+let sword =0;
+let leye = 3;
+let reye = 3;
+let backGround =4;
+let skullSize = 0
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
@@ -43,10 +59,10 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     let hat2 = color(yellow)
     let back = color(yellow);
     let back2 = color(fyellow);
-    let back3 = color(fpink);
+    let back3 = color(yellow);
     let back4 = color(black);
     let teeth = color(yellow);
-    
+    let craniumSize = 0;
  
     let r1 = random(20,200);
     let r2 = random(20,200);
@@ -58,26 +74,20 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     let r8 = random(20,200);
     let r9 = random(20,200);
     let r = random(20,200);
+
+    let rs = random(40,150)
   
-    let centerX =100;
-    let centerY =100;
-    let craniumSize = 140;
-    let eyeSize = 10;
-    let backCX = 100;
-    let backCY = 100;
-    let backCS = 200;
-    let x = 100;
-    let y = 100;
-    let s1 = 110;
-    let s = -110
+    if (skullSize == 1){
+      craniumSize = 100
+    } 
     
-    let hat = 5;
-    let sword =0;
-    let leye = 3;
-    let reye = 3;
-    let background =5;
+    if (skullSize == 0){
+      craniumSize = rs
+    } 
     
-    
+    if (skullSize == 2){
+      craniumSize = 150
+    } 
     /*Mork Borg Colours 
     yellow 255,233,0
     pink 255,62,181
@@ -91,13 +101,13 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
        lineW = 1
     }
 
-    if(background == 1)//concentric
+    if(backGround == 1)//concentric
     { stroke(line3);
       strokeWeight(lineW*2);
       noFill()
       rect(0,0,200,200)}
 
-    if(background == 1)
+    if(backGround == 1)
       {noFill();
         strokeWeight(lineW*3)
         ellipse(100,100,200,200);
@@ -116,7 +126,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
         line(0,180,180,0);
         line(200,20,20,200);}
 
-    if (background == 2) //Lines
+    if (backGround == 2) //Vertical Lines
     { stroke(line3);
       strokeWeight(lineW);
       line(5,5,5,100);
@@ -193,7 +203,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
       line(200,10,200,110);
       line(200,135,200,200);}
      
-    if (background == 3)//fade
+    if (backGround == 3)//fade
     {strokeWeight(lineW)
       stroke(line4)
       fill(back2)
@@ -207,7 +217,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
       ellipse(backCX,backCY,backCS/8*1);
     }
 
-    if(background == 4)//swords
+    if(backGround == 4)//swords
     {/*
       DrawSword(90,0,20,line3,base2);
       DrawSword(90,25,-40,line2,back3);
@@ -229,7 +239,7 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   
     }
    
-    if(background == 5)//drips
+    if(backGround == 5)//Vertical drips
     { stroke(line3);
       strokeWeight(lineW);
       fill(back4)
